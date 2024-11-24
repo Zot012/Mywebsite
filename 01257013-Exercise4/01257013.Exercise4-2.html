@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document?!?!</title>
+    <style>
+        
+        .cute{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: mymove 2s infinite;
+            animation-timing-function: ease-in-out;
+        }
+        
+        @keyframes mymove {
+            from {top: 0px;}
+             to {top: 20px;}
+            }
+    </style>
+    
+</head>
+<body>
+    <script>
+
+
+        let choose;
+        choose = window.prompt("Please input the Pokemon you like\n(1=pikachu, 2=bulbasaur, 3=charmander,4=squirtle, 5=random)","1");
+        console.log(choose);
+        if(choose<1||choose>5){
+            alert("Wrong input! Please press [F5] to reload the page!");
+        }
+        let len;
+        len = window.prompt("Please input the side length (>=1 and <=10):","5");
+        console.log(len);
+        if(len<1||len>10){
+            alert("Wrong input! Please press [F5] to reload the page!");
+            
+        }
+
+        var randomn =Math.floor(Math.random()*1);   // random 
+        
+        if(choose==1){
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                    document.write('<img src="pikachu.png" class="cute"  style="animation-delay:' + (Math.random() * 1) + 's;"  />');
+                }
+                document.write('<br>');
+            }    
+        }
+        else if(choose==2){
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                    document.write('<img src="bulbasaur.png.png" class="cute" style="animation-delay:' + (Math.random() * 1) + 's;"/>');
+                }
+                document.write('<br>');
+            }    
+        }
+        else if(choose==3){
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                    document.write('<img src="charmander.png" class="cute" style="animation-delay:' + (Math.random() * 1) + 's;"/>');
+                }
+                document.write('<br>');
+            }    
+        }
+        else if(choose==4){
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                    document.write('<img src="squirtle.png" class="cute" style="animation-delay:' + (Math.random() * 1) + 's;"/>');
+                }
+                document.write('<br>');
+            }    
+        }
+        else if(choose==5){
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                    let randomNum = Math.floor(Math.random() * 4) + 1;
+                    if(randomNum==1){
+                        document.write('<img src="pikachu.png" class="cute" style="animation-delay:' + (Math.random() * 1) + 's;"/>');
+                    }
+                    else if(randomNum==2){
+                        document.write('<img src="bulbasaur.png" class="cute" style="animation-delay:' + (Math.random() * 1) + 's;"/>');
+                    }
+                    else if(randomNum==3){
+                        document.write('<img src="charmander.png" class="cute" style="animation-delay:' + (Math.random() * 1) + 's;"/>');
+                    }
+                    else {
+                        document.write('<img src="squirtle.png" class="cute" style="animation-delay:' + (Math.random() * 1) + 's;"/>');
+                }
+            }
+            document.write('<br>');    
+        }
+    }
+                
+                
+            
+                
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Simple Animation</title>
+	<style>
+	</style>
+	<script>
+		const picAry = new Array("microsoft", "google", "yahoo", "facebook", "amazon", "apple");
+		let second=0;
+		function change(){
+			let result="";
+			for(let i=0;i<6;i++){
+				
+				var picx=Math.floor(Math.random()*301)+100;
+				var picy=Math.floor(Math.random()*301)+100;
+				
+				result+=`<img src="${picAry[i]}.png" style="position:absolute; top:${picy}px; left:${picx}px; max-width:30%; max-height:30%;">`;
+				
+			}
+			console.log("add pic",picx,picy,result);
+			document.getElementById("canvas").innerHTML=result;
+		}
+
+		function start(){
+			setInterval(change,2000);
+		}
+		
+		window.addEventListener("load",start,false);
+	</script>
+</head>
+
+<body>
+	<div id="canvas">
+		
+	</div>
+</body>
+
+</html>

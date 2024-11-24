@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>
+         Drop-Down Menu
+      </title>
+      <style type = "text/css">
+         body            { font-family:Perpetua;}
+         *{
+            box-sizing: border-box;
+        }
+         h1              { color: royalblue;
+                          text-align: center;
+                         }
+         nav             { font-weight: bold;
+                           color: white;
+                           border: 2px solid RoyalBlue;
+                           text-align: center;
+                           width:calc(100%/6);
+                           background-color: RoyalBlue; 
+                           float:left;
+                           
+                         }
+         nav ul          { display: none;
+                           list-style: none;
+                           margin: 0;
+                           padding: 0;
+                           width:calc(100%/6);
+                           border: 2px solid RoyalBlue; 
+                           position: absolute;
+                            }
+         nav:hover ul    { display: block; }
+         nav ul li       { border-top: 2px solid RoyalBlue;
+                           background-color: white;
+                           width: 100%;
+                           color: black; }
+         nav ul li:hover { background-color: PowderBlue; }
+         a               { text-decoration: none; }
+         @media only screen and (max-width: 600px) {
+            div nav ul,div nav{
+            width: 100%;
+            position: relative;
+        }}
+      </style>
+   </head>
+   <body>
+      <h1>Web Intelligence</h1>
+      <div>
+      <nav>JavaScript
+         <ul>
+            <li><a href = "https://www.w3schools.com/js/default.asp" target="_blank">W3Schools</a></li>
+            <li><a href = "https://developer.mozilla.org/zh-TW/docs/Web/JavaScript" target="_blank">MDN</a></li>
+            <li><a href = "https://www.json.org/json-en.html" target="_blank">JSON</a></li>
+         </ul>
+      </nav>
+      <nav>Client-side Framework
+         <ul>
+            <li><a href = "https://react.dev/" target="_blank">react</a></li>
+            <li><a href = "https://vuejs.org/" target="_blank">vue.js</a></li>
+            <li><a href = "https://angular.tw/" target="_blank">Angular</a></li>
+         </ul>
+      </nav>
+      <nav>node.js
+         <ul>
+            <li><a href = "https://www.w3schools.com/nodejs/" target="_blank">Node.js Tutorial</a></li>
+         </ul>
+      </nav>
+      <nav>PHP</nav>
+      <nav>ASP.Net</nav>
+      <nav>Spring Boot</nav>
+   </div>
+   <iframe src="01257013-Exercise3-1.html" width=100% height=550px>
+   </iframe>
+   </body>
+</html>
+

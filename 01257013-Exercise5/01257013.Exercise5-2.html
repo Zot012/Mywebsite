@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .picture{
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+    </style>
+    <script>
+        function get(){
+            let button1=document.getElementById("triangle");
+            let button2=document.getElementById("square");
+            let button3=document.getElementById("special");
+            button1.addEventListener("click", drawBaseballTriangle, false);
+            button2.addEventListener("click", drawBaseballSquare, false);
+            button3.addEventListener("click", drawSpecialSquare, false);
+        }
+        function drawBaseballTriangle() {
+            let result='';
+            let number = document.getElementById('length');
+            let len = parseInt(number.value);
+
+            if (len<0){
+                alert("Invalid integer.");
+                len = 5;
+            }
+            else if (len>10){
+                alert("Invalid integer.");
+                len = 5;
+            }
+
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                    if(len-runtime1>runtime-1){
+                        console.log("blank");
+                        result +='<img src="blank.png" class="picture" />';
+                    }
+                    else{
+                        console.log("baseball");
+                        result +='<img src="baseball.jpg" class="picture" />';
+                    }
+                }
+                result +='<br>';
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+        function drawBaseballSquare() {
+            let result='';
+            let number = document.getElementById('length');
+            let len = parseInt(number.value);
+
+            if (len<0){
+                alert("Invalid integer.");
+                len = 5;
+            }
+            else if (len>10){
+                alert("Invalid integer.");
+                len = 5;
+            }
+
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                        result +='<img src="baseball.jpg" class="picture" />';
+                }
+                result +='<br>';
+            }    
+            document.getElementById("result").innerHTML = result;
+        }
+        function drawSpecialSquare() {
+            let result='';
+            let number = document.getElementById('length');
+            let len = parseInt(number.value);
+
+            if (len<0){
+                alert("Invalid integer.");
+                len = 5;
+            }
+            else if (len>10){
+                alert("Invalid integer.");
+                len = 5;
+            }
+
+            for(let runtime = 1;runtime<=len;++runtime){
+                for(let runtime1 = 1;runtime1<=len;++runtime1){
+                    let random =Math.floor(Math.random()*2);   // random 
+                    if(random == 0){
+                        console.log("special case");
+                        result +='<img src="baseball-x.jpg" class="picture" />';
+                    }
+                    else{
+                        console.log("baseball");
+                        result +='<img src="baseball.jpg" class="picture" />';
+                    }
+                }
+                result +='<br>';
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+        window.addEventListener("load", get, false);
+    </script>
+</head>
+<body>
+    <p><label>Side length(<=10):
+        <input id="length" type="number"></label>
+        <input id="triangle" type="button" value="Draw baseball Triangle">
+        <input id="square" type="button" value="Draw baseball square">
+        <input id="special" type="button" value="Draw special square">
+        <hr>
+    </p>
+    <div id="result"></div>
+</body>
+</html>

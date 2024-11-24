@@ -1,0 +1,53 @@
+body{
+    background-color: #0f4b87;
+    width: 70%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+    margin: 0 auto;
+}
+.logo{
+    width: 100%;
+    text-align: center;
+    margin: 15px auto;
+}
+nav{
+    background-color: #246ab0;
+    border-radius: 50px;
+    text-align: center;
+    padding: 10px;
+}
+.sec {
+    padding: 20px; /* 內邊距，避免文字貼到框邊 */
+    margin: 15px; /* 外邊距，讓區塊與其他元素分隔 */
+    border: 1px solid #ccc; /* 邊框顏色 */
+    border-radius: 30px; /* 邊框圓角 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加柔和陰影 */
+    font-size: 20px; /* 字體大小 */
+    line-height: 1.6; /* 行高，讓文字更易讀 */
+    color: #e455a4; /* 文字顏色 */
+    font-family: Arial, sans-serif; /* 字體 */
+}
+a.section{
+    background-color: #4c97e2;
+    color:aliceblue;
+    border-radius: 20px;
+    margin: 10px auto;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+a:hover{
+    color:rgb(172, 206, 235);
+
+}
+@media (max-width: 768px) {
+    .sec {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sec {
+        padding: 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Local Storage</title>
+    <style type="text/CSS">
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            background-color: lightblue;
+            font-family: Perpetua;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        th {
+            text-align: center;
+            color: white;
+            background-color: darkblue;
+        }
+
+        tr.oddrow {
+            background-color: white;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        
+        function start() {
+            document.getElementById("addButton").addEventListener("click",addthat,false);
+            document.getElementById("removeAllButton").addEventListener("click", removeAll, false);
+        }
+        
+        function addthat() {
+            let title = document.getElementById("titleInput").value;
+            let author = document.getElementById("authorInput").value;
+            let year = document.getElementById("yearInput").value;
+            let url = document.getElementById("urlInput").value;
+            if (title === "" || author === "" || year === "" || url === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+            let bookObj = {
+                title: title,
+                author: author,
+                year: year,
+                url: url
+            }
+            let obj=JSON.stringify(bookObj);
+            let time = new Date().getTime();
+            let key = "ntou"+time;
+            localStorage.setItem(key,obj);
+            displayData();
+        }
+        
+        function removeAll() {
+            localStorage.clear();
+            alert("All items are removed!")
+            displayData();
+        }
+        window.addEventListener("load", start, false);
+        
+        function displayData() {
+            let data = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                data[i] = localStorage.key(i);
+            }
+            data.sort();
+            let shift ="";
+            shift += "<table><tr><th>Title</th><th>Author</th><th>Year</th><th>URL</th></tr>";
+            data.forEach((key, index) => {
+                let value = localStorage.getItem(key);
+                let bookObj = JSON.parse(value);
+                let rowClass = index % 2 === 0 ? "" : "oddrow";
+                
+                shift += `<tr class="${rowClass}">
+                        <td>${bookObj.title}</td>
+                        <td>${bookObj.author}</td>
+                        <td>${bookObj.year}</td>
+                        <td><a href="${bookObj.url}">${bookObj.url}</td>
+                    </tr>`;
+            });
+            //shift += "</tbody></table>";
+            document.getElementById("display").innerHTML=shift;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <p>
+            <label>Book Title:
+                <input type="text" id="titleInput">
+            </label>
+            <label>Author(s):
+                <input type="text" id="authorInput">
+            </label>
+            <label>Year:
+                <input type="text" id="yearInput">
+            </label>
+            <label>Book URL:
+                <input type="text" id="urlInput">
+            </label>
+        </p>
+        <p>
+            <input type="button" value="Add New Item" id="addButton">
+            <input type="button" value="Remove All Items" id="removeAllButton">
+        </p>
+    </form>
+    <hr>
+    <div id="display">
+    </div>
+</body>
+
+</html>
