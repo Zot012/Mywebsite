@@ -49,3 +49,21 @@ div{
 a:hover{
     color: rgb(91, 91, 198);
 }
+@media (max-width: 768px) {
+    nav{
+        overflow: unset;
+    }
+    div {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    nav{
+        overflow:unset ;
+    }
+    div {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
